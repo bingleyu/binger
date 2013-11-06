@@ -1,2 +1,3 @@
-This is the twitter application for
-the [*Binger*]
+This is the Binger application 
+ [*Binger*]
+surpported by ruby on rails.
