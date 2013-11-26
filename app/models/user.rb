@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
 
   has_secure_password
-  #validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }
 
   def User.new_token
     SecureRandom.urlsafe_base64
@@ -46,8 +46,7 @@ class User < ActiveRecord::Base
   def send_password_reset
     self.password_reset_token=User.new_token
     self.password_reset_sent_at = Time.zone.now
-    self.save!
-    #self.update_attributes([self.password_reset_token,self.password_reset_sent_at])
+    self.save(validate: false)
     UserMailer.password_reset(self).deliver
   end
 
