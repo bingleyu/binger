@@ -17,9 +17,9 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
 
   has_secure_password
-  validates :password, length: { minimum: 6 }
+  #validates :password, length: { minimum: 6 }
 
-  def User.new_remember_token
+  def User.new_token
     SecureRandom.urlsafe_base64
   end
 
@@ -28,7 +28,6 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    # This is preliminary. See "Following users" for the full implementation.
     Micropost.from_users_followed_by(self)
   end
 
@@ -44,9 +43,18 @@ class User < ActiveRecord::Base
     relationships.find_by(followed_id: other_user.id).destroy!
   end
 
+  def send_password_reset
+    self.password_reset_token=User.new_token
+    self.password_reset_sent_at = Time.zone.now
+    self.save!
+    #self.update_attributes([self.password_reset_token,self.password_reset_sent_at])
+    UserMailer.password_reset(self).deliver
+  end
+
+
   private
 
     def create_remember_token
-      self.remember_token = User.encrypt(User.new_remember_token)
+      self.remember_token = User.encrypt(User.new_token)
     end
 end

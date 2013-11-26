@@ -3,6 +3,7 @@
     <div class="container">
       <%= link_to "Binger", root_path, id: "logo" %>
         <nav>
+        
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
@@ -21,6 +22,7 @@
                 </li>
               </ul>
             </li>
+            
           <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
           <% end %>
