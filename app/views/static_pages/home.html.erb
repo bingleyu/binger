@@ -17,16 +17,17 @@
     </div>
   </div>
 <% else %>
-	<div class="center hero-unit">
-	  <h1>Welcome to Binger</h1>
+	 <div class="center hero-unit">
+      <h1>Welcome to Binger</h1>
 
-	  <h2>
-	    This is the home page for Binger App
-	    
-	  </h2>
+      <h2>
+        This is the home page for Binger App
+        
+      </h2>
 
-	  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-	</div>
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+
+	 </div>
 
 	<%= link_to image_tag("pigeon.jpg", alt: "Binger"), '#' %>
 <% end %>

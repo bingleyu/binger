@@ -81,4 +81,16 @@ Binger::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security,
   # and use secure cookies.
   config.force_ssl = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {
+    :tls            => true,
+    :address        => 'smtp.gmail.com',
+    :port           => 587,
+    :domain         => 'example.come',
+    :authentication => :plain,
+    :user_name      => 'bingle.yu@gmail.com',
+    :password       =>  ENV['SMTP_PASSWORD']
+  }
+  config.action_mailer.raise_delivery_errors = true
 end

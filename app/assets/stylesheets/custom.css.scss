@@ -253,3 +253,13 @@ aside {
   padding-left: 10px;
   color: $grayLight;
 }
+
+.panel {
+  padding: 6px;
+  margin-bottom: 5px;
+  background-color: #f88017;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
