@@ -1,6 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="span4">
+    <div class="well well-sm">
     <section>
       <h1>
         <%= gravatar_for @user %>
@@ -9,9 +10,10 @@
     </section>
     <section>
       <%= render 'shared/stats' %>
-    </section>
+    </section></div>
   </aside>
   <div class="span8">
+    <div class="well well-sm">
     <%= render 'follow_form' if signed_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
@@ -20,5 +22,6 @@
       </ol>
       <%= will_paginate @microposts %>
     <% end %>
+  </div>
   </div>
 </div>

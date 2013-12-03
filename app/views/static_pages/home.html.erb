@@ -1,7 +1,9 @@
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">
-      <section>
+      <div class="well well-sm">
+  
+     <section>
         <%= render 'shared/user_info' %>
       </section>
       <section>
@@ -9,12 +11,14 @@
       </section>
       <section>
         <%= render 'shared/micropost_form' %>
-      </section>
+      </section></div>
     </aside>
     <div class="span8">
-      <h3>Micropost Feed</h3>
+      <div class="well well-lg">
+        <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
     </div>
+  </div>
   </div>
 <% else %>
 	 <div class="center hero-unit">
@@ -26,9 +30,6 @@
       </h2>
 
       <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-
 	 </div>
-
-	<%= link_to image_tag("pigeon.jpg", alt: "Binger"), '#' %>
 <% end %>
 

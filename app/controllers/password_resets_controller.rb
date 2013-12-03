@@ -8,7 +8,8 @@ class PasswordResetsController < ApplicationController
 		  @user.send_password_reset if @user
 		  redirect_to root_url, :notice => "Email sent with password reset instructions."
 		else
-		  redirect_to root_url, :notice => "No user found ! Your email should be invalid."
+		  redirect_to root_url, :notice => "No user found! Your email should be invalid."
+		end
   end
 
   def edit
