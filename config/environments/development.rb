@@ -27,13 +27,5 @@ Binger::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => "localhost",
-    :port                 => 25,
-    :domain               => 'hxdi.com',
-    :user_name            => 'yub',
-    :password             => 'foobar',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  }
+  ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
 end
