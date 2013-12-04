@@ -1,4 +1,7 @@
 <% provide(:title, "Password reset") %>
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well well-sm">
 <h1>Reset password</h1>
 <div class="form-group" >
 <%= form_tag password_resets_path, :method => :post do %>
@@ -8,4 +11,7 @@
   </div>
   <div class="actions"><%= submit_tag "Reset Password" %></div>
 <% end %>
+</div>
+</div>
+</div>
 </div>
