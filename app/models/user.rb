@@ -6,14 +6,16 @@ class User < ActiveRecord::Base
                                    class_name:  "Relationship",
                                    dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
+  has_many :replies, foreign_key: "to_id", class_name: "Micropost"
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token
-
-  validates :name, presence: true, 
-                   length: { :within => 4..50 },
-                   uniqueness: { case_sensitive: false }
+  VALID_NAME_REGEX = /\A[^_]{2,20}\Z/              
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :name, presence: true, 
+                   format: { with: VALID_NAME_REGEX },
+                   uniqueness: { case_sensitive: false }
+  
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
@@ -50,6 +52,22 @@ class User < ActiveRecord::Base
     self.password_reset_sent_at = Time.zone.now
     self.save(validate: false)
     UserMailer.password_reset(self).deliver
+  end
+
+  def shorthand
+   # name.gsub(/\s*/,"")
+   name.gsub(/ /,"_")
+  end
+
+  def self.shorthand_to_name(sh)
+   # name.gsub(/\s*/,"")
+   sh.gsub(/_/," ")
+  end
+
+  def self.find_by_shorthand(shorthand_name)
+    all = where(name: User.shorthand_to_name(shorthand_name))
+    return nil if all.empty?
+    all.first
   end
 
 

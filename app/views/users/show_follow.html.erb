@@ -1,6 +1,7 @@
 <% provide(:title, @title) %>
 <div class="row">
   <aside class="span4">
+    <div class="well well-sm"
     <section>
       <%= gravatar_for @user %>
       <h1><%= @user.name %></h1>
@@ -16,8 +17,10 @@
         </div>
       <% end %>
     </section>
+  </div>
   </aside>
   <div class="span8">
+    <div class="well well-sm">
     <h3><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users">
@@ -25,5 +28,6 @@
       </ul>
       <%= will_paginate %>
     <% end %>
+  </div>
   </div>
 </div>
