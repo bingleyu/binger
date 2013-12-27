@@ -1,6 +1,13 @@
 <% provide(:title, 'All users') %>
 <div class="well well-lg">
-<h1>All users</h1>
+<h1>Users list</h1>
+<%= form_tag users_path, :method => 'get', :class => 'form-search pull-right' do %>
+  <p>
+    <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "username" %>
+    <%= submit_tag "Search", :class => "btn btn-small btn-inverse", :name => nil %>
+  </p>
+<% end %>
+<hr />
 
 <%= will_paginate %>
 
