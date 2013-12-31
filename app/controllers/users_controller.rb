@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   
   def index
     @users = User.search(params[:search]).paginate(page: params[:page])
+    if @users.empty?
+      flash.now[:error] = 'No such user,check username!'
+    end
   end
 
   def show
