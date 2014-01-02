@@ -29,7 +29,7 @@
             </li>
             
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to "Sign in", signin_path, rel: "tooltips", title: "登录" %></li>
           <% end %>
         </ul>
       </div>
