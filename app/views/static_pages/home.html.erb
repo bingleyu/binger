@@ -6,18 +6,26 @@
       <section>
         <%= render 'shared/user_info' %>
       </section>
-      <section>
+      <section id="microposts_counts">
         <%= render 'shared/stats' %>
       </section>
       <section>
         <%= render 'shared/micropost_form' %>
       </section>
       </div>
+      <div class="well well-sm" >
+        <%=link_to 'About', about_path %>
+        <%=link_to 'Contact Us', contact_path %>
+        <strong class="pull-right badge">@2014 Binger.Inc </strong>
+      </div>
     </aside>
+
     <div class="span8">
-      <div class="well well-lg">
+      <div class="well well-sm">
         <h3>Micropost Feed</h3>
+      <div id="micropost_feed" >
       <%= render 'shared/feed' %>
+    </div>
     </div>
     </div>
   </div>
@@ -30,7 +38,7 @@
         
       </h2>
 
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary", rel: "tooltips", title: "新用户注册" %>
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-warning", rel: "tooltips", title: "新用户注册" %>
 	 </div>
 <% end %>
 

@@ -1,0 +1,2 @@
+$("#<%= dom_id(@micropost)+'2' %>").html('<%= @comment.micropost.comments.count %>');
+$("#<%= dom_id(@micropost)+'3' %>").html("<%= escape_javascript(render @comments) %>")

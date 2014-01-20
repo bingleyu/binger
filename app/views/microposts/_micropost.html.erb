@@ -1,11 +1,25 @@
-<li>
-  <span class="content"><%= wrap(micropost.content) %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-  </span>
+<li id="<%= dom_id(micropost) %>" >
+  <div class="well well-sm" >
+    <%= link_to gravatar_for(micropost.user ,size: 50)  %>
+    <span class="content"><%= wrap(micropost.content) %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    </span>
+
+  <%= link_to( url_for( controller: 'microposts', action: 'show_comment', id: micropost.id ) , method: :get, remote: true, class: 'btn btn-mini btn-success' ) do %>
+         Comments(<span id="<%= dom_id(micropost)+'2' %>" ><%= micropost.comments.count %></span>)
+  <% end %> 
+  
   <% if current_user?(micropost.user) %>
-    <%= link_to "delete", micropost, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: micropost.content %>
+    <%= link_to( micropost, method: :delete, remote: true, 
+                         data: { confirm: "Are you sure?" },
+                         ref: "tooltip", title: "删除该微博",
+                         :class => "pull-right") do %>
+                         <i class="icon-trash"></i>
+    <% end %>
+                          
   <% end %>
+<div id="<%= dom_id(micropost)+'1' %>" style="display: none;" >
+</div>
+</div>
 </li>

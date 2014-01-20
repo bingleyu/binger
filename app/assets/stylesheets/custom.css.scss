@@ -5,13 +5,15 @@
 
 html {
   overflow-y: scroll;
-  background-image: url(/assets/background.jpg);
+  background-image: url(/assets/background_greens.jpg);
   background-repeat: repeat;
+  display: compact;
 }
 
 body {
   padding-top: 60px;
   background-color: transparent;
+  font-family: Georgia, "Microsoft YaHei", "Times New Roman", Times, serif;
 }
 
 section {
@@ -82,12 +84,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  /* border-top: 1px solid #eaeaea; */
   color: $grayLight;
 }
 
 footer a {
-  color: #555;
+  color: #222;
 }
 
 footer a:hover {
@@ -99,7 +101,7 @@ footer small {
 }
 
 footer ul {
-  float: right;
+  float: left;
   list-style: none;
 }
 
@@ -193,6 +195,9 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+.input-sign {
+  width: 300px;
+}
 
 #error_explanation {
   color: #f00;
@@ -233,9 +238,11 @@ input {
     border-top: 1px solid #e8e8e8;
   }
 }
+
 .content {
   display: block;
 }
+
 .timestamp {
   color: $grayLight;
 }
@@ -243,6 +250,7 @@ input {
   float: left;
   margin-right: 10px;
 }
+
 aside {
   textarea {
     height: 100px;
@@ -275,4 +283,35 @@ aside {
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23);
   -webkit-font-smoothing: antialiased;
+}
+.btn-fullwidth {
+  width: 300px !important;
+}
+
+/* hero-unit */
+.hero-unit {
+  padding: 45px;/* CHANGE PADDING HERE*/
+  margin-bottom: 50px; 
+  font-size: 15px;
+  font-weight: 180;
+  line-height: 35px;
+  color: inherit;
+  background-color: #dcf3d8; /* CHANGE BACKGROUND HERE*/
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+}
+
+/* well-sm bg-color */ 
+
+.well-sm {
+   padding: 20px;
+   background-color: rgba(238, 238, 228, 0.9);
+   border: 1px solid #ccc;
+   border-radius: 12px;
+   @include box_sizing;
+}
+.well-lg {
+   color: inherit;
+   background-color: rgba(135, 142, 105, 1);
 }

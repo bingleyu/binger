@@ -1,11 +1,20 @@
 Binger::Application.routes.draw do
+  get "comments/create"
+  get "comments/destroy"
+ 
   resources :users do
     member do
       get :following, :followers
     end
   end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts do
+    member do
+      get :show_comment
+    end
+    resources :comments, only: [:create, :destroy]
+  end
+  
   resources :relationships, only: [:create, :destroy]
   resources :password_resets, only: [:new, :edit, :create, :update]
 

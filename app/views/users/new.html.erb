@@ -1,25 +1,26 @@
 <% provide(:title, 'Sign up') %>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span7 offset3">
     <div class="well well-sm">
-    <h1>Sign up</h1>
+    <h3 class="center" title="新用户注册">Sign up to Binger Today!</h3><br />
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.label :name, "Username" %>
+      <%= f.text_field :name, placeholder: "Username", class: "input-sign" %>&nbsp You can change it later.
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.label :email_adress %>
+      <%= f.text_field :email, placeholder: "Email", class: "input-sign" %>
+      What’s your email address?
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, placeholder: "Password", class: "input-sign" %> 6 characters or more! Be fussy.
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: "PasswordConfirmation", class: "input-sign" %> Retype your password.
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Create my account", class: "btn btn-medium btn-warning btn-fullwidth", rel: "tooltips", title: "创建我的账号" %>
     <% end %>
   </div>
   </div>

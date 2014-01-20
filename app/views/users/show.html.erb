@@ -4,20 +4,26 @@
     <div class="well well-sm">
     <section>
       <h1>
-        <%= gravatar_for @user %>
+        <%= gravatar_for @user, size: 42 %>
         <%= @user.name %>
       </h1>
     </section>
     <section>
       <%= render 'shared/stats' %>
-    </section></div>
+    </section>
+    </div>
+     <div class="well well-sm" >
+        <%=link_to 'About', about_path %>
+         <%=link_to 'Contact Us', contact_path %>
+         <strong class="pull-right badge">@2014 Binger.Inc </strong>
+      </div>
   </aside>
   <div class="span8">
     <div class="well well-sm">
     <%= render 'follow_form' if signed_in? %>
+    <h3>Microposts</h3><i id="total" class="badge"><%= @user.microposts.count %></i>
     <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
+      <ol id="profile" class="microposts" >
         <%= render @microposts %>
       </ol>
       <%= will_paginate @microposts %>

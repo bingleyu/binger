@@ -2,7 +2,10 @@
   <%= gravatar_for user, size: 52 %>
   <%= link_to user.name, user %>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+    | <%= link_to "Delete", user, method: :Delete,
+                                  data: { confirm: "Are you sure?(该用户的所以资料将被清除)" },
+                                  ref: "tooltip",
+                                  title: "删除该用户",
+                                  class: "btn btn-small btn-default" %>
   <% end %>
  </li>

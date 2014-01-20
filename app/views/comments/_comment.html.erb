@@ -1,0 +1,18 @@
+<div id="comment-<%= comment.id%>">
+<section class="user">
+<%= link_to gravatar_for(comment.user,size: 30), comment.user %>
+
+   <%= link_to comment.user.name, comment.user %>
+   <%= wrap(comment.comment_content) %>
+
+<span class="timestamp">
+ Posted at (<%= time_ago_in_words(comment.created_at) %> ago.)
+</span>
+<% if current_user?(comment.user) %>
+  <%= link_to "Delete", micropost_comment_path(comment.micropost, comment), 
+                      method: :delete, remote: true, data: { confirm: "Are You sure?" },
+                      ref: "tooltip", title: "删除该评论",
+                      :class => "pull-right"  %>
+ <% end %>
+</section><hr />
+</div>

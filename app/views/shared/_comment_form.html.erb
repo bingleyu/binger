@@ -1,0 +1,10 @@
+<%= form_for([@micropost, @comment], remote: true ) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :comment_content %>
+  </div>
+  <button class="btn btn-small btn-inverse" 
+          type="submit"  rel="tooltips" title="评论">
+    Comment
+  </button>
+<% end %>

@@ -1,0 +1,2 @@
+$("#micropost_feed").html("<%= escape_javascript(render('shared/feed')) %>")
+$("#micropost_count").html('<%= current_user.microposts.count %>')

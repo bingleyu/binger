@@ -1,14 +1,16 @@
 <% provide(:title, 'All users') %>
-<div class="well well-lg">
-<h1>Users list</h1>
-<h2>(Total <%= @users.count %>)</h2>
+<div class="well well-sm">
+<h1>Users list </h1>
+
 <%= form_tag users_path, :method => 'get', :class => 'form-search pull-right' do %>
   <p>
     <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "username" %>
-    <%= submit_tag "Search", :class => "btn btn-small btn-inverse", :name => nil %>
-  </p>
+    <%= button_tag(type: "submit", class: "btn btn-default", title: "Search") do %>
+    <i class="icon-search"></i>
 <% end %>
-<hr />
+  </p>
+<% end %><br />
+<span class="badge centered">Total&nbsp<%= @users.count %>&nbsp users</span>
 
 <%= will_paginate %>
 

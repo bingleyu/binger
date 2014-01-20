@@ -3,7 +3,7 @@
   <aside class="span4">
     <div class="well well-sm">
     <section>
-      <%= gravatar_for @user %>
+      <%= gravatar_for @user, size: 42 %>
       <h1><%= @user.name %></h1>
       <span><%= link_to "view my profile", @user %></span>
     </section>

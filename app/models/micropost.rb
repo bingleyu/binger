@@ -2,6 +2,7 @@ class Micropost < ActiveRecord::Base
   @@reply_to_regexp = /\A@([^\s]*)/
   belongs_to :user
   belongs_to :to, class_name: "User"
+  has_many :comments, dependent: :destroy
   
   default_scope -> { order('created_at DESC') }
   before_save :extract_in_reply_to

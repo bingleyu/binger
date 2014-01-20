@@ -7,6 +7,7 @@
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    
     <%= render 'layouts/shim' %>
   </head>
   <body>
@@ -18,6 +19,8 @@
        <%= yield %>
        <%= debug(params) if Rails.env.development? %>
     </div>
-  
+<% if !signed_in? %>
+    <%= render 'layouts/footer' %>
+<% end %>
   </body>
 </html>

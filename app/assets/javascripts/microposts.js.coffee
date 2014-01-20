@@ -13,3 +13,5 @@ jQuery(document).ready ->
   jQuery('#micropost_content').change updateCountdown
   jQuery('#micropost_content').keyup updateCountdown
   return
+
+  

@@ -1,24 +1,40 @@
 <% provide(:title, 'About Us') %>
 <!DOCTYPE html>
-
-<div class="row">
-  <aside class="span4">
-	<div class="well well-sm">
-	<%= link_to "Frequently asked question", '#' %>
+<div class="hero-unit">
+<h3> About Us </h2><hr />
+<div class="tabbable"> 
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#about" data-toggle="tab">What is Binger</a></li>
+    <li><a href="#faq" data-toggle="tab">Frequently Asked Questions</a></li>
+  </ul>
+  <div class="well well-sm">
+  <div class="tab-content">
+    <div class="tab-pane active" id="about">
+      <p> Binger is a web application that enable you and your friends share News、Thoughts and Ideas quickly and interactively, so Enjoy!</p>
     </div>
-  </aside>
-  <aside class="span8">
-	<div class="well well-sm" >
-	<h1 align="left" >About Us</h1>
-	<p>
-	  Welcome to Binger Smart Communities web portal. This community-owned portal is designed to foster and promote the VOICE'S of our neighborhoods. Welcome to Binger Smart Communities web portal. This community-owned portal is designed to foster and promote the VOICE'S of our neighborhoods.
-	  Welcome to Binger Smart Communities web portal. This community-owned portal is designed to foster and promote the VOICE'S of our neighborhoods.
-	  Welcome to Binger Smart Communities web portal. This community-owned portal is designed to foster and promote the VOICE'S of our neighborhoods.
-	  Welcome to Binger Smart Communities web portal. This community-owned portal is designed to foster and promote the VOICE'S of our neighborhoods.
-	  Welcome to Binger Smart Communities web portal. This community-owned portal is designed to foster and promote the VOICE'S of our neighborhoods.
-	  Welcome to Binger Smart Communities web portal. This community-owned portal is designed to foster and promote the VOICE'S of our neighborhoods.
-	  Welcome to Binger Smart Communities web portal. This community-owned portal is designed to foster and promote the VOICE'S of our neighborhoods.
-	  </p>
-	</div>
-</aside>
+    <div class="tab-pane" id="faq">
+     <div class="panel panel-info">
+      <div class="panel-heading"><i>Username REGS:</i></div>
+  <div class="panel-body">
+    &nbsp&nbspUsername could not have underscores(_) since we use '_' to link user firstname and lastname when @somebody,ex at bingle yu, we must put it as @bingle_yu
+  </div>
+  </div><hr />
+  <div class="panel panel-info">
+      <div class="panel-heading"><i>How to @ users:</i></div>
+  <div class="panel-body">
+    &nbsp&nbspWe use @username to post a micropost so that the user(you are not following) can also see it on his/her micropost feed, it is very simple,put an @username and a space before your content, you should put it as @bingle_yu when user name has two words(bingle yu).
+  </div>
+  </div><hr />
+  <div class="panel panel-info">
+      <div class="panel-heading"><i>User icon:</i></div>
+  <div class="panel-body">
+    &nbsp&nbspUser icon use Gravatar icon app, if you have a Gravatar account, you have your
+    icon automatically:); if not ,go and apply for it @ <a href="https://cn.gravatar.com/">Gravatar icon</a>
+  </div>
+  </div>
+  </div>
+  </div>
 </div>
+</div>
+</div>
+
