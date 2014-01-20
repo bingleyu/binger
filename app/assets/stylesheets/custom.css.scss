@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 /* universal */
 
@@ -97,16 +98,16 @@ footer a:hover {
 }
 
 footer small {
-  float: left;
+  float: right;
 }
 
 footer ul {
-  float: left;
+  float: right;
   list-style: none;
 }
 
 footer ul li {
-  float: left;
+  float: right;
   margin-left: 10px;
 }
 

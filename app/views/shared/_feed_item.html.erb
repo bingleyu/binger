@@ -7,15 +7,15 @@
   <span class="timestamp">
     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
   </span>
-  <%= link_to( url_for( controller: 'microposts', action: 'show_comment', id: feed_item.id ) , method: :get, remote: true, class: 'btn btn-mini btn-success' ) do %>
-         Comments(<span id="<%= dom_id(feed_item)+'2' %>" ><%= feed_item.comments.count %></span>)
+  <%= link_to( url_for( controller: 'microposts', action: 'show_comment', id: feed_item.id ) , method: :get, remote: true, class: 'btn btn-mini btn-success', title: "评论" ) do %>
+         <i class="fa fa-comment"></i>(<span id="<%= dom_id(feed_item)+'2' %>" ><%= feed_item.comments.count %></span>)
   <% end %> 
   <% if current_user?(feed_item.user) %>
     <%= link_to(feed_item, method: :delete, remote: true,
                                      data: { confirm: "You sure?" },
                                      title: "删除该条微博",
                                      class: "pull-right") do %>
-                                     <span class="icon-trash" ></span>
+                                     <span class="fa fa-trash-o" ></span>
     <% end %>
   <% end %>
 <div id="<%= dom_id(feed_item)+'1' %>" style="display: none;" >

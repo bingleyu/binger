@@ -6,8 +6,8 @@
       Posted <%= time_ago_in_words(micropost.created_at) %> ago.
     </span>
 
-  <%= link_to( url_for( controller: 'microposts', action: 'show_comment', id: micropost.id ) , method: :get, remote: true, class: 'btn btn-mini btn-success' ) do %>
-         Comments(<span id="<%= dom_id(micropost)+'2' %>" ><%= micropost.comments.count %></span>)
+  <%= link_to( url_for( controller: 'microposts', action: 'show_comment', id: micropost.id ) , method: :get, remote: true, class: 'btn btn-mini btn-success',title: "查看评论" ) do %>
+         <i class="fa fa-comment"></i>(<span id="<%= dom_id(micropost)+'2' %>" ><%= micropost.comments.count %></span>)
   <% end %> 
   
   <% if current_user?(micropost.user) %>
@@ -15,7 +15,7 @@
                          data: { confirm: "Are you sure?" },
                          ref: "tooltip", title: "删除该微博",
                          :class => "pull-right") do %>
-                         <i class="icon-trash"></i>
+                         <i class="fa fa-trash-o"></i>
     <% end %>
                           
   <% end %>
