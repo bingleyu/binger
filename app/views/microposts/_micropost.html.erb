@@ -13,7 +13,7 @@
   <% if current_user?(micropost.user) %>
     <%= link_to( micropost, method: :delete, remote: true, 
                          data: { confirm: "Are you sure?" },
-                         ref: "tooltip", title: "删除该微博",
+                         ref: "tooltip", title: "删除该条微博",
                          :class => "pull-right") do %>
                          <i class="fa fa-trash-o"></i>
     <% end %>
