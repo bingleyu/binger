@@ -3,11 +3,11 @@
 <div class="row">
   <div class="span7 offset3">
     <div class="well well-sm">
-    <h3 class="center" title="新用户注册">Sign up to Binger Today!</h3><br />
+    <h3 class="center" title="新用户注册">Join Binger Today!</h3><br />
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name, "Username" %>
+      <%= f.label :name, "Username", title: "用户名" %>
       <%= f.text_field :name, placeholder: "Username", class: "input-sign" %>&nbsp You can change it later.
 
       <%= f.label :email_adress %>
