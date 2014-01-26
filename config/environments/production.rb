@@ -87,6 +87,5 @@ Binger::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.default_content_type = "text/html"
   ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
 end
