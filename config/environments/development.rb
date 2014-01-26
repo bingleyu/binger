@@ -27,5 +27,6 @@ Binger::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_content_type = "text/html"
   ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
 end
