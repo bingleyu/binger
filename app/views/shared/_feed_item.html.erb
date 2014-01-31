@@ -3,10 +3,11 @@
   <span class="user">
     <%= link_to feed_item.user.name, feed_item.user %>
   </span>
-  <span class="content"><%= wrap(feed_item.content) %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+  <span class="timestamp pull-right" >
+    <%= time_ago_in_words(feed_item.created_at) %>
   </span>
+  <span class="content"><%= wrap(feed_item.content) %></span>
+  
   <%= link_to( url_for( controller: 'microposts', action: 'show_comment', id: feed_item.id ) , method: :get, remote: true, class: 'btn btn-mini btn-success', title: "评论" ) do %>
          <i class="fa fa-comment"></i>(<span id="<%= dom_id(feed_item)+'2' %>" ><%= feed_item.comments.count %></span>)
   <% end %> 

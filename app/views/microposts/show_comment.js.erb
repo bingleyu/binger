@@ -1,7 +1,7 @@
 if ($("#<%= dom_id(@micropost)+'1' %>").css("display") == "none" ){ 
-	$("#<%= dom_id(@micropost)+'1' %>").animate({ height: 'show', opacity: 'show' }, 'slow')
+	$("#<%= dom_id(@micropost)+'1' %>").animate({ height: 'show', opacity: 'show' }, 'fast','linear')
 	$("#<%= dom_id(@micropost)+'1' %>").html("<%= escape_javascript(render( :partial => 'show_comment')) %>")
 }
 else {
-	$("#<%= dom_id(@micropost)+'1' %>").animate({ height: 'hide', opacity: 'hide' }, 'slow')
+	$("#<%= dom_id(@micropost)+'1' %>").animate({ height: 'hide', opacity: 'hide' }, '200','linear')
 }
