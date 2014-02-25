@@ -4,7 +4,12 @@
     <%= link_to feed_item.user.name, feed_item.user %>
   </span>
   <span class="timestamp pull-right" >
+    <% if (Time.now-feed_item.created_at).to_i>86400 %>
+    <%= feed_item.created_at.strftime("%m/%d/%Y at  %l:%M %p") %>
+    <% else %>
     <%= time_ago_in_words(feed_item.created_at) %>
+    <% end %>
+
   </span>
   <span class="content"><%= wrap(feed_item.content) %></span>
   
